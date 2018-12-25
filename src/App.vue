@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <CubeCore></CubeCore>
+    <CubeCore/>
   </div>
 </template>
 

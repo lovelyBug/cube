@@ -1,11 +1,11 @@
 <template lang="html">
     <div class="box" :style="styleObject">
-        <div class="face" :style="{background:color.x3,opacity:opacity}"></div>
-        <div class="face" :style="{background:color.y3,opacity:opacity}"></div>
-        <div class="face" :style="{background:color.z1,opacity:opacity}"></div>
-        <div class="face" :style="{background:color.y1,opacity:opacity}"></div>
-        <div class="face" :style="{background:color.z3,opacity:opacity}"></div>
-        <div class="face" :style="{background:color.x1,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.x3,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.y3,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.z1,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.y1,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.z3,opacity:opacity}"></div>
+      <div class="face" :style="{background:color.x1,opacity:opacity}"></div>
     </div>
 </template>
 
