@@ -14,6 +14,9 @@
     <div class="button" @click="rotate('d', -1)">D'</div>
     <div class="button" @click="rotate('l', 1)">L'</div>
     <div class="button" @click="rotate('l', -1)">L</div>
+    <div class="button" @click="rotate('mx', 1)">MX</div>
+    <div class="button" @click="rotate('my', 1)">MY</div>  
+    <div class="button" @click="rotate('mz', 1)">MZ</div>
     <div class="button" @click="randomRotate(25,true)">随机打乱</div>
   </div>
   <div class="opacity-set">
@@ -109,6 +112,18 @@ export default {
         case 'b':
           coordinate = 'x';
           position = 1;
+          break
+        case 'mx':
+          coordinate = 'x';
+          position = 2;
+          break
+        case 'my':
+          coordinate = 'y';
+          position = 2;
+          break
+        case 'mz':
+          coordinate = 'z';
+          position = 2;
           break
         default:
           console.log('error direction')
