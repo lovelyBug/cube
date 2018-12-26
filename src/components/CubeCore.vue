@@ -21,7 +21,7 @@
     <input @mousemove.stop="()=>{}" type="range" v-model="opacity" min="0" max="100">
   </div>
   <div class="cube" :style="'transform: rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)'">
-    <Cube v-for="position in positions" :position="position" :ref="position[0]+'-'+position[1]+'-'+position[2]" :key="position[0]+'-'+position[1]+'-'+position[2]" :id="position[0]+'-'+position[1]+'-'+position[2]" :opacity="opacity/100"></Cube>
+    <Cube v-on:rotateCube="rotate" v-for="position in positions" :position="position" :ref="position[0]+'-'+position[1]+'-'+position[2]" :key="position[0]+'-'+position[1]+'-'+position[2]" :id="position[0]+'-'+position[1]+'-'+position[2]" :opacity="opacity/100"></Cube>
   </div>
 </div>
 </template>
@@ -117,7 +117,7 @@ export default {
       const list = this.$children.filter(item => item[coordinate] == position);
       list.forEach((item) => {
         Object.assign(item.colorCache, item.color);
-        item.$el.style.transition = 'all .5s ease-in-out';
+        item.$el.style.transition = 'all .1s ease-in-out';
         if (coordinate == 'y') {
           item.rotateX += clockwise;
         } else if (coordinate == 'x') {
@@ -158,7 +158,7 @@ export default {
             callback()
           }, 120)
         }
-      }, 500)
+      }, 100)
     },
     changeColor(c1, c2, d1, d2, d3) {
       c1.color = {

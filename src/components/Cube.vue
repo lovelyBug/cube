@@ -1,11 +1,11 @@
 <template lang="html">
     <div class="box" :style="styleObject">
-      <div class="face" :style="{background:color.x3,opacity:opacity}"></div>
-      <div class="face" :style="{background:color.y3,opacity:opacity}"></div>
-      <div class="face" :style="{background:color.z1,opacity:opacity}"></div>
-      <div class="face" :style="{background:color.y1,opacity:opacity}"></div>
-      <div class="face" :style="{background:color.z3,opacity:opacity}"></div>
-      <div class="face" :style="{background:color.x1,opacity:opacity}"></div>
+      <div class="one face" @click="showDetail" :style="{background:color.x3,opacity:opacity}"></div>
+      <div class="two face" @click="showDetail" :style="{background:color.y3,opacity:opacity}"></div>
+      <div class="three face" @click="showDetail" :style="{background:color.z1,opacity:opacity}"></div>
+      <div class="four face" @click="showDetail" :style="{background:color.y1,opacity:opacity}"></div>
+      <div class="five face" @click="showDetail" :style="{background:color.z3,opacity:opacity}"></div>
+      <div class="six face" @click="showDetail" :style="{background:color.x1,opacity:opacity}"></div>
     </div>
 </template>
 
@@ -61,19 +61,19 @@ export default {
     this.y = this.position[1];
     this.z = this.position[2];
     if (this.position[1] == 1) {
-      this.color.y1 = '#0500c1'
+      this.color.y1 = '#0500c1' //蓝色
     } else if (this.position[1] == 3) {
-      this.color.y3 = '#138804'
+      this.color.y3 = '#138804' //绿色
     }
     if (this.position[2] == 1) {
-      this.color.z1 = '#f7f8f5'
+      this.color.z1 = '#f7f8f5' //白色
     } else if (this.position[2] == 3) {
-      this.color.z3 = '#f9fd0c'
+      this.color.z3 = '#f9fd0c' //黄色
     }
     if (this.position[0] == 1) {
-      this.color.x1 = '#f9640a'
+      this.color.x1 = '#f9640a' //橙色
     } else if (this.position[0] == 3) {
-      this.color.x3 = '#c50209'
+      this.color.x3 = '#c50209' //red
     }
   },
   computed: {
@@ -126,6 +126,32 @@ export default {
       }
     }
   },
+  methods: {
+    showDetail (e) {
+      console.log(e.target.classList[0])
+      let key = e.target.classList[0]
+      switch (key) {
+        case 'one':
+          this.$emit('rotateCube', 'f', 1)
+          break
+        case 'two':
+          this.$emit('rotateCube', 'r', 1)
+          break
+        case 'three':
+          this.$emit('rotateCube', 'd', 1)
+          break
+        case 'four':
+          this.$emit('rotateCube', 'l', 1)
+          break
+        case 'five':
+          this.$emit('rotateCube', 'u', 1)
+          break
+        case 'six':
+          this.$emit('rotateCube', 'b', 1)
+          break
+      }
+    }
+  }
 }
 </script>
 
