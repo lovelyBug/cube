@@ -1,32 +1,32 @@
 <template>
-<div class="hello" @mousedown="handleMouseDown">
-  <h1>{{ title }}</h1>
-  <div class="button-group">
-    <div class="button" @click="rotate('r', 1)">R</div>
-    <div class="button" @click="rotate('r', -1)">R'</div>
-    <div class="button" @click="rotate('u', -1)">U</div>
-    <div class="button" @click="rotate('u', 1)">U'</div>
-    <div class="button" @click="rotate('b', 1)">B'</div>
-    <div class="button" @click="rotate('b', -1)">B</div>
-    <div class="button" @click="rotate('f', -1)">F'</div>
-    <div class="button" @click="rotate('f', 1)">F</div>
-    <div class="button" @click="rotate('d', 1)">D</div>
-    <div class="button" @click="rotate('d', -1)">D'</div>
-    <div class="button" @click="rotate('l', 1)">L'</div>
-    <div class="button" @click="rotate('l', -1)">L</div>
-    <div class="button" @click="rotate('mx', 1)">MX</div>
-    <div class="button" @click="rotate('my', 1)">MY</div>  
-    <div class="button" @click="rotate('mz', 1)">MZ</div>
-    <div class="button" @click="randomRotate(25,true)">随机打乱</div>
+  <div class="hello" @mousedown="handleMouseDown">
+    <h1>{{ title }}</h1>
+    <div class="button-group">
+      <div class="button" @click="rotate('r', 1)">R</div>
+      <div class="button" @click="rotate('r', -1)">R'</div>
+      <div class="button" @click="rotate('u', -1)">U</div>
+      <div class="button" @click="rotate('u', 1)">U'</div>
+      <div class="button" @click="rotate('b', 1)">B'</div>
+      <div class="button" @click="rotate('b', -1)">B</div>
+      <div class="button" @click="rotate('f', -1)">F'</div>
+      <div class="button" @click="rotate('f', 1)">F</div>
+      <div class="button" @click="rotate('d', 1)">D</div>
+      <div class="button" @click="rotate('d', -1)">D'</div>
+      <div class="button" @click="rotate('l', 1)">L'</div>
+      <div class="button" @click="rotate('l', -1)">L</div>
+      <div class="button" @click="rotate('mx', 1)">MX</div>
+      <div class="button" @click="rotate('my', 1)">MY</div>  
+      <div class="button" @click="rotate('mz', 1)">MZ</div>
+      <div class="button" @click="randomRotate(25,true)">随机打乱</div>
+    </div>
+    <div class="opacity-set">
+      <label>透明度</label>
+      <input @mousemove.stop="()=>{}" type="range" v-model="opacity" min="0" max="100">
+    </div>
+    <div class="cube" :style="'transform: rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)'">
+      <Cube v-on:rotateCube="rotate" v-for="position in positions" :position="position" :ref="position[0]+'-'+position[1]+'-'+position[2]" :key="position[0]+'-'+position[1]+'-'+position[2]" :id="position[0]+'-'+position[1]+'-'+position[2]" :opacity="opacity/100"></Cube>
+    </div>
   </div>
-  <div class="opacity-set">
-    <label>透明度</label>
-    <input @mousemove.stop="()=>{}" type="range" v-model="opacity" min="0" max="100">
-  </div>
-  <div class="cube" :style="'transform: rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)'">
-    <Cube v-on:rotateCube="rotate" v-for="position in positions" :position="position" :ref="position[0]+'-'+position[1]+'-'+position[2]" :key="position[0]+'-'+position[1]+'-'+position[2]" :id="position[0]+'-'+position[1]+'-'+position[2]" :opacity="opacity/100"></Cube>
-  </div>
-</div>
 </template>
 
 <script>

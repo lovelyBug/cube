@@ -1,12 +1,12 @@
 <template lang="html">
-    <div class="box" :style="styleObject">
-      <div class="one face" @click="showDetail" :style="{background:color.x3,opacity:opacity}"></div>
-      <div class="two face" @click="showDetail" :style="{background:color.y3,opacity:opacity}"></div>
-      <div class="three face" @click="showDetail" :style="{background:color.z1,opacity:opacity}"></div>
-      <div class="four face" @click="showDetail" :style="{background:color.y1,opacity:opacity}"></div>
-      <div class="five face" @click="showDetail" :style="{background:color.z3,opacity:opacity}"></div>
-      <div class="six face" @click="showDetail" :style="{background:color.x1,opacity:opacity}"></div>
-    </div>
+  <div class="box" :style="styleObject">
+    <div class="one face" @click="showDetail" :style="{background:color.x3,opacity:opacity}"></div>
+    <div class="two face" @click="showDetail" :style="{background:color.y3,opacity:opacity}"></div>
+    <div class="three face" @click="showDetail" :style="{background:color.z1,opacity:opacity}"></div>
+    <div class="four face" @click="showDetail" :style="{background:color.y1,opacity:opacity}"></div>
+    <div class="five face" @click="showDetail" :style="{background:color.z3,opacity:opacity}"></div>
+    <div class="six face" @click="showDetail" :style="{background:color.x1,opacity:opacity}"></div>
+  </div>
 </template>
 
 <script>
