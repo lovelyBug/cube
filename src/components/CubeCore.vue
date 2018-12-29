@@ -15,8 +15,11 @@
       <div class="button" @click="rotate('l', 1)">L'</div>
       <div class="button" @click="rotate('l', -1)">L</div>
       <div class="button" @click="rotate('mx', 1)">MX</div>
-      <div class="button" @click="rotate('my', 1)">MY</div>  
+      <div class="button" @click="rotate('mx', -1)">RMX</div>
+      <div class="button" @click="rotate('my', 1)">MY</div>
+      <div class="button" @click="rotate('my', -1)">RMY</div>
       <div class="button" @click="rotate('mz', 1)">MZ</div>
+      <div class="button" @click="rotate('mz', -1)">RMZ</div>
       <div class="button" @click="randomRotate(25,true)">随机打乱</div>
     </div>
     <div class="opacity-set">
